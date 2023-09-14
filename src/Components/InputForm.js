@@ -10,6 +10,17 @@ import {
 import React from "react";
 
 export default function InputForm() {
+  const initialHousingDetails = {
+    latitude: "",
+    longitude: "",
+    housing_median_age: 0,
+    total_rooms: 0,
+    total_bedrooms: 0,
+    population: 0,
+    households: 0,
+    median_income: 0,
+    ocean_proximity: "",
+  };
   return (
     <Container>
       <Stack mt={2}>
