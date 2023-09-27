@@ -98,5 +98,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-#pickle files
+#pickle files & joblib files
 *.pkl
+*.joblib
