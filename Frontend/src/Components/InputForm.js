@@ -30,7 +30,22 @@ export default function InputForm() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(housingDetails);
+    fetch("http://localhost:5000/api/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(housingDetails),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // Handle the response from the server
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle errors
+      });
   };
   return (
     <Container>
