@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import numpy as np
 import joblib
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 # sample route for testing
@@ -46,8 +48,10 @@ mytest = np.array(
 )
 
 
-@app.route("/predict")
+@app.route("/api/predict", methods=["POST"])
 def predictor():
+    data = request.get_json()
+    print(data)
     try:
         predictions = model.predict(mytest)
         return jsonify({"predictions": predictions.tolist()})
