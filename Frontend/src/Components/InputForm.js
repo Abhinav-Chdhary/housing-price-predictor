@@ -6,6 +6,7 @@ import {
   InputGroup,
   Box,
   Select,
+  Heading,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
@@ -22,6 +23,8 @@ export default function InputForm() {
     ocean_proximity: "NEAR BAY",
   };
   const [housingDetails, sethousingDetails] = useState(initialHousingDetails);
+  const [predic, setPredic] = useState("");
+
   const onDetailsChange = (event) => {
     sethousingDetails({
       ...housingDetails,
@@ -39,8 +42,7 @@ export default function InputForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        // Handle the response from the server
+        setPredic(data.predictions[0]);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -148,6 +150,11 @@ export default function InputForm() {
         </Box>
         <Input type="submit" onClick={handleSubmit} />
       </Stack>
+      {predic ? (
+        <Heading size="lg">Estimated Median House Value: {predic}</Heading>
+      ) : (
+        <></>
+      )}
     </Container>
   );
 }
