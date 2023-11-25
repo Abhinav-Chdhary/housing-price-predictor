@@ -15,6 +15,6 @@ To deploy a basic ai model with react frontend, that predicts median housing pri
 
 ## Future Work:
 1. The model's accuracy needs to be increased.
-2. For now it only works for carlifornia housing dataset, however I it to predict median housing price anywhere in the world.
+2. For now it only works for carlifornia housing dataset, however I want it to predict median housing price anywhere in the world.
 3. Better UI/UX
 4. Proofing against intentional bad values.
