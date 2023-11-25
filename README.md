@@ -1,10 +1,9 @@
 # housing-price-predictor 😎
-To make a basic ai that predicts housing price with react frontend. 
+To deploy a basic ai model with react frontend, that predicts median housing price. 
 ## Technologies used:
-Flask for backend
-Python/Jupyter notebook to make the model
-
-React-Chakra.ui for frontend
+- Flask for backend
+- Python/Jupyter notebook to make the model
+- React-Chakra.ui for frontend
 
 ### New things I learnt for this project
 - How to use predefined libraries like Chakra.ui
